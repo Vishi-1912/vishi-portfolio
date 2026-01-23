@@ -14,7 +14,7 @@ export default function Hero() {
 
       <div className={styles.actions}>
         <a
-          href="/resume.pdf"
+          href="/Vishi_Tyagi_Full_Stack_Developer.pdf"
           target="_blank"
           className={styles.primary}
         >
@@ -22,7 +22,7 @@ export default function Hero() {
         </a>
 
         <a
-          href="https://github.com/your-github-username"
+          href="https://github.com/Vishi-1912"
           target="_blank"
           className={styles.secondary}
         >
@@ -30,7 +30,7 @@ export default function Hero() {
         </a>
 
         <a
-          href="https://linkedin.com/in/your-linkedin"
+          href="https://linkedin.com/in/vishi1912"
           target="_blank"
           className={styles.secondary}
         >
