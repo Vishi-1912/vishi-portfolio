@@ -1,8 +1,9 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
     <main>
-      <h1>Vishi Tyagi</h1>
-      <p>Backend-Focused Full Stack Engineer</p>
+      <Hero />
     </main>
   );
 }
