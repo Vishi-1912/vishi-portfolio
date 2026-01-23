@@ -1,0 +1,40 @@
+.experience {
+  margin-top: 4rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.role {
+  margin-bottom: 2.5rem;
+}
+
+.role h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.company {
+  color: #555;
+  font-weight: 400;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 0.75rem;
+}
+
+.role ul {
+  padding-left: 1.2rem;
+}
+
+.role li {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
