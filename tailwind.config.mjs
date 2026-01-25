@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './app/**/*.{js,ts,jsx,tsx,mdx}',
-        './components/**/*.{js,ts,jsx,tsx,mdx}',
-        './pages/**/*.{js,ts,jsx,tsx,mdx}',
+      './app/**/*.{js,ts,jsx,tsx,mdx}',
+      './components/**/*.{js,ts,jsx,tsx,mdx}',
+      './pages/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
         extend: {
@@ -27,15 +27,15 @@ export default {
                 paragraph: "helvetica-w01-light"
             },
             colors: {
-                foreground: 'var(--foreground)',
-                subtletext: 'var(--subtletext)',
-                primary: 'var(--primary)',
-                destructive: 'var(--destructive)',
-                destructiveforeground: 'var(--destructiveforeground)',
-                background: 'var(--background)',
-                secondary: 'var(--secondary)',
-                'secondary-foreground': 'var(--secondary-foreground)',
-                'primary-foreground': 'var(--primary-foreground)',
+                foreground: '#000000',
+                destructive: '#DF3131',
+                destructiveforeground: '#FFFFFF',
+                subtletext: '#333333',
+                background: '#FFFFFF',
+                secondary: '#FFFFFF',
+                'secondary-foreground': '#000000',
+                'primary-foreground': '#000000',
+                primary: '#00965E'
             },
         },
     },
