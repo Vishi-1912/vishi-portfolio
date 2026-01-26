@@ -1,10 +1,25 @@
 .skills {
-  margin-top: 4rem;
+  padding: 8rem 4rem 6rem;
+  margin: auto;
 }
 
 .skills h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 4.5rem;
+  line-height: 1;
+  letter-spacing: .06em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.skills p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  letter-spacing: .025em;
+  font-weight: 400;
+}
+
+.skills hr {
+  margin: 2rem 0;
 }
 
 .grid {
@@ -14,13 +29,57 @@
 }
 
 .card {
-  border: 1px solid #eee;
   padding: 1.5rem;
   border-radius: 8px;
+  background-color: #ffffff;
+}
+
+.imageCard {
+  width: 3.2rem;
+  height: 3.5rem;
+  background-color: #556a8d;
+  border-radius: 8px;
+  padding: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.card:hover .imageCard {
+  background-color: #1e293b;
+}
+
+.skillImage {
+  width: 2rem;
+  height: 2rem;
+  /* object-fit: contain; */
 }
 
 .card h3 {
   margin-bottom: 0.75rem;
+  color: #1e293b;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  letter-spacing: .03em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.card:hover h3 {
+  color: #556a8d;
+}
+
+.progressBar {
+  width: 100%;
+  height: 0.3rem;
+  background-color: #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.progressBar > div {
+  height: 100%;
+  border-radius: 1rem;
 }
 
 .card ul {
@@ -30,5 +89,9 @@
 
 .card li {
   margin-bottom: 0.5rem;
-  color: #555;
+  color: #000000;
+  font-size: .875rem;
+  line-height: 1.3;
+  letter-spacing: .02em;
+  font-weight: 400;
 }
