@@ -1,0 +1,165 @@
+.main {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #e1e1e1;
+  max-width: 700px;
+  text-align: center;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.card:hover .iconWrapper {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.iconWrapper {
+  width: 4rem;
+  height: 4rem;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #556a8d;
+}
+
+.cardTitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #556a8d;
+  margin-bottom: 0.5rem;
+}
+
+.cardValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  word-break: break-all;
+}
+
+.formSection {
+  margin-top: 6rem;
+  width: 100%;
+  max-width: 800px;
+}
+
+.formTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #e1e1e1;
+}
+
+.input, .textarea {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  border-color: #556a8d;
+}
+
+.textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submitButton {
+  padding: 1rem 2rem;
+  background-color: #556a8d;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background-color: #445672;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}

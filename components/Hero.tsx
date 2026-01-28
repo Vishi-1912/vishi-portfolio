@@ -1,6 +1,7 @@
 "use client"
 import styles from "@/styles/hero.module.css";
 import { Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const resumeLink = "/Vishi_Tyagi_Full_Stack_Developer.pdf";
@@ -9,18 +10,33 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <h1 className={styles.title}>
+      <motion.h1
+        className={styles.title}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9 }}
+      >
         Backend-Focused <br /> Full Stack Engineer
-      </h1>
+      </motion.h1>
 
       <hr className="border-white/10" />
 
-      <p className={styles.subtitle}>
+      <motion.p
+        className={styles.subtitle}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.1 }}
+      >
         Node.js • NestJS • MERN Stack
-      </p>
+      </motion.p>
 
       {/* 👇 Media / Portfolio Area ONLY */}
-      <div className={styles.portfolio}>
+      <motion.div
+        className={styles.portfolio}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.2 }}
+      >
 
         {/* Image */}
         <img
@@ -41,7 +57,7 @@ export default function Hero() {
           <p className={styles.cardText}>
             Specialized in server-side development with full-stack capabilities. Transforming complex logic into efficient, maintainable code.
           </p>
-          
+
           <div className={styles.socialIcons}>
             <a
               href={githubLink}
@@ -60,7 +76,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
 
   );
