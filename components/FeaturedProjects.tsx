@@ -4,16 +4,18 @@ import projects from "@/data/projects";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Cpu, ExternalLink, Github, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function ProjectCard() {
     return (
-        <section className={styles.featured}>
+        <section id="projects" className={styles.featured}>
             <div className="flex">
                 <div className="w-1/3">
                     <h1>Selected Works</h1>
                 </div>
                 <div className="w-1/3"></div>
                 <div className="w-2/3 text-right" style={{ alignContent: "flex-end" }}>
+                    {/* <h6><Link href="/projects" style={{ textDecoration: "none", color: "#556a8d" }}>━━━━━ View All Projects</Link></h6> */}
                     <h6>━━━━━ Featured Projects</h6>
                 </div>
             </div>

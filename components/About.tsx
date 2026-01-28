@@ -7,10 +7,20 @@ export default function About() {
       <div className="flex">
 
         {/* Left Section */}
-        <div className="w-1/3">
-          <h1 className={styles.aboutTitle1}>About</h1>
-          <h1 className={styles.aboutTitle2}>Me</h1>
-          <hr />
+        <div className="w-2/3">
+          <div className="flex">
+            <div className="w-2/3">
+              <h1 className={styles.aboutTitle1}>About</h1>
+              <h1 className={styles.aboutTitle2}>Me</h1>
+              <hr />
+            </div>
+            <div className={styles.aboutImage}>
+              <img
+                src="Snapchat-859014230-removebg-preview.png"
+                alt="About Me"
+              />
+            </div>
+          </div>
           <p>
             Software Engineer with 2+ years of experience in MEAN/MERN stack
             development, specializing in Node.js and NestJS backend systems.
@@ -21,22 +31,22 @@ export default function About() {
 
         {/* Right Section */}
         <div className={styles.aboutRight}>
-          <h2>
+          {/* <h2>
             "I enjoy working on backend-heavy problems with
             clean system architecture, and performance optimization while being
             comfortable contributing to frontend features using React and Angular."
-          </h2>
+          </h2> */}
 
-          <div className={styles.aboutBottom}>
-            <div className="w-1/2">
-              <h6><Database style={{ color: "#556a8d" }} size={24} /> System Architecture</h6>
-              <p>I specialize in designing robust architectures that handle complex business logic and high-volume data processing. Efficiency is not just a goal; it's the standard.</p>
-            </div>
-            <div className="w-1/2">
-              <h6><Globe style={{ color: "#556a8d" }} size={24} /> Full Stack Integration</h6>
-              <p>With a strong foundation in full-stack development, I ensure seamless integration and optimal performance across the entire technology stack, from database to UI.</p>
-            </div>
-          </div>
+          {/* <div className={styles.aboutBottom}> */}
+          {/* <div className="w-1/2"> */}
+          <h6><Database style={{ color: "#556a8d" }} size={24} /> System Architecture</h6>
+          <p>I specialize in designing robust architectures that handle complex business logic and high-volume data processing. Efficiency is not just a goal; it's the standard.</p>
+          {/* </div> */}
+          {/* <div className="w-1/2"> */}
+          <h6><Globe style={{ color: "#556a8d" }} size={24} /> Full Stack Integration</h6>
+          <p>With a strong foundation in full-stack development, I ensure seamless integration and optimal performance across the entire technology stack, from database to UI.</p>
+          {/* </div> */}
+          {/* </div> */}
         </div>
 
       </div>
