@@ -32,7 +32,7 @@ export default function Skills() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: index * 0.5 }}
+            transition={{ duration: 0.7, delay: index * 0.2 }}
             className={styles.card}>
 
             <div className={styles.imageCard}>
