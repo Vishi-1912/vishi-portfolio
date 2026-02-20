@@ -1,14 +1,25 @@
+"use client"
 import experience from "@/data/experience";
 import styles from "@/styles/experience.module.css";
+import { motion } from "framer-motion";
 
 export default function Experience() {
   return (
     <section className={styles.experience}>
-      <h1>Professional Path</h1>
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >Professional Path</motion.h1>
 
       {experience.map((exp, index) => (
-        <div
+        <motion.div
           key={exp._id}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           className={`${styles.row} ${index % 2 === 0 ? styles.reverse : ""}`}
         >
           {/* Image side */}
@@ -52,7 +63,7 @@ export default function Experience() {
               <p className={styles.location}>{exp.location}</p>
             )}
           </div>
-        </div>
+        </motion.div>
       ))}
 
 

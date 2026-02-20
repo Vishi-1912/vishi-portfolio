@@ -95,3 +95,33 @@
   letter-spacing: .02em;
   font-weight: 400;
 }
+
+@media (max-width: 1024px) {
+  .skills h2 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 4rem 1.5rem;
+  }
+
+  .skills h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .skills p {
+    font-size: 0.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+}

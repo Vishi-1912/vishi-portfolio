@@ -1,11 +1,19 @@
+"use client"
 import skills from "@/data/skills";
 import styles from "@/styles/skills.module.css";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   return (
     <section className={styles.skills}>
-      <div className="flex">
+      <motion.div
+        className="flex"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <div className="w-1/3">
           <h2>Technical Arsenal</h2>
         </div>
@@ -13,13 +21,19 @@ export default function Skills() {
         <div className="w-2/3 text-right" style={{ alignContent: "flex-end" }}>
           <p>A curated set of technologies I use to build scalable, high-performance applications.</p>
         </div>
-      </div>
+      </motion.div>
 
       <hr />
 
       <div className={styles.grid}>
-        {Object.entries(skills).map(([category, { image, list }]) => (
-          <div key={category} className={styles.card}>
+        {Object.entries(skills).map(([category, { image, list }], index) => (
+          <motion.div
+            key={category}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: index * 0.5 }}
+            className={styles.card}>
 
             <div className={styles.imageCard}>
               <Image
@@ -48,7 +62,7 @@ export default function Skills() {
                 <li key={skill}>{skill}</li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

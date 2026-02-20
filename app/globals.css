@@ -2,6 +2,7 @@
  
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 
@@ -19,4 +20,5 @@ body {
   font-family: "serif";
   color: #ffffff;
   background: #1e293b;
+  overflow-x: hidden;
 }

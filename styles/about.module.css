@@ -6,6 +6,26 @@
   color: #000000;
 }
 
+.container {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.aboutLeft {
+  width: 60%;
+}
+
+.leftTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.titleWrapper {
+  width: 65%;
+}
+
 .about h1 {
   font-size: 6rem;
   line-height: 1;
@@ -26,6 +46,10 @@
   margin-bottom: 3rem;
 }
 
+.description {
+  margin-top: 2rem;
+}
+
 .about p {
   font-size: 1.125rem;
   line-height: 1.5;
@@ -34,8 +58,8 @@
 }
 
 .aboutRight {
-  width: 45%;
-  padding-left: 6rem;
+  width: 40%;
+  padding-left: 4rem;
   height: 450px;
   overflow: scroll;
   scrollbar-width: none;
@@ -70,12 +94,6 @@
   margin-bottom: 3rem;
 }
 
-/* .aboutBottom {
-  margin-top: 3rem;
-  display: flex;
-  gap: 3rem;
-} */
-
 .aboutImage {
   width: 100%;
   height: 240px;
@@ -94,3 +112,82 @@
     margin-left: 1.5rem;
     border-radius: 30%;
 }
+
+@media (max-width: 1024px) {
+  .about h1 {
+    font-size: 4rem;
+  }
+  
+  .aboutRight {
+    padding-left: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .aboutLeft, .aboutRight {
+    width: 100%;
+  }
+
+  .leftTop {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titleWrapper {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .about hr {
+    margin: 1.5rem auto 2rem;
+  }
+
+  .aboutRight {
+    padding-left: 0;
+    height: auto;
+    overflow: visible;
+    margin-top: 2rem;
+  }
+
+  .aboutRight h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .aboutRight h6, .aboutRight p {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .aboutImage {
+    margin: 2rem auto;
+    width: 200px;
+    height: 200px;
+  }
+
+  .aboutImage img {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+  }
+
+  .description {
+    text-align: center;
+  }
+}
+
+

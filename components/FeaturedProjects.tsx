@@ -4,12 +4,17 @@ import projects from "@/data/projects";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Cpu, ExternalLink, Github, ArrowRight } from "lucide-react";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function ProjectCard() {
     return (
         <section id="projects" className={styles.featured}>
-            <div className="flex">
+            <motion.div
+                className="flex"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}>
                 <div className="w-1/3">
                     <h1>Selected Works</h1>
                 </div>
@@ -18,7 +23,7 @@ export default function ProjectCard() {
                     {/* <h6><Link href="/projects" style={{ textDecoration: "none", color: "#556a8d" }}>━━━━━ View All Projects</Link></h6> */}
                     <h6>━━━━━ Featured Projects</h6>
                 </div>
-            </div>
+            </motion.div>
 
             <div className={styles.grid}>
                 {projects.filter(project => project.isFeatured).map((project, index) => (
@@ -27,7 +32,7 @@ export default function ProjectCard() {
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.7, delay: index * 0.1 }}
+                        transition={{ duration: 0.7, delay: index * 0.5 }}
                         className={styles.card}
                     >
                         {/* Image Card */}
