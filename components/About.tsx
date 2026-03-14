@@ -30,7 +30,7 @@ export default function About() {
             </div>
           </div>
           <p className={styles.description}>
-            Software Engineer with 2+ years of experience in MEAN/MERN stack
+            Software Engineer with 3 years of experience in MEAN/MERN stack
             development, specializing in Node.js and NestJS backend systems.
             Experienced in designing scalable REST APIs, managing relational and
             NoSQL databases, and implementing secure authentication flows.
@@ -54,7 +54,7 @@ export default function About() {
 //  <h2>About Me</h2>
 
 //       <p>
-//         Software Engineer with 2+ years of experience in MEAN/MERN stack
+//         Software Engineer with 3 years of experience in MEAN/MERN stack
 //         development, specializing in Node.js and NestJS backend systems.
 //         Experienced in designing scalable REST APIs, managing relational and
 //         NoSQL databases, and implementing secure authentication flows.
