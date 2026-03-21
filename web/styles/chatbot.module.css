@@ -1,0 +1,241 @@
+:root {
+  --primary-color: #1e293b;
+}
+
+.fabIcon {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    padding: 1rem;
+    background-color: #ffffff;
+    color: #1e293b;
+    border-radius: 9999px;
+    box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.427);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.fabIcon:hover {
+    transform: scale(1.1);
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 150;
+}
+
+/* Drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: -10px 0 25px rgba(0, 0, 0, 0.1);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.drawerHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.headerInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.botIconWrapper {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  display: flex;
+}
+
+.closeButton {
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  color: white;
+  display: flex;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Message Area */
+.messagesArea {
+  flex-grow: 1;
+  padding: 1.5rem;
+  background-color: #fafafa;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.messageRow {
+    display: flex;
+    width: 100%;
+}
+
+.messageRowUser {
+    justify-content: flex-end;
+}
+
+.messageRowBot {
+    justify-content: flex-start;
+}
+
+.messageContainer {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 85%;
+}
+
+.messageContainerUser {
+    flex-direction: row-reverse;
+}
+
+.avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.avatarUser {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.avatarBot {
+    background-color: #e2e8f0;
+    color: #64748b;
+}
+
+.messageContent {
+  padding: 0.875rem 1rem;
+  border-radius: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.messageContentUser {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-top-right-radius: 0.25rem;
+}
+
+.messageContentBot {
+  background-color: #fff;
+  color: #1e293b;
+  border-top-left-radius: 0.25rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Sources */
+.sources {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.source {
+  font-size: 0.7rem;
+  padding: 0.125rem 0.5rem;
+  background-color: #f1f5f9;
+  color: #64748b;
+  border-radius: 0.25rem;
+}
+
+/* Input Area */
+.inputArea {
+  padding: 1.25rem;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  color: #1e293b;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputField {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  padding-right: 3.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  font-size: 0.9375rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.inputField:focus {
+  border-color: var(--primary-color);
+  background-color: #fff;
+}
+
+.submitButton {
+  position: absolute;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Footer Text */
+.footerText {
+  font-size: 0.7rem;
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 0.75rem;
+}
