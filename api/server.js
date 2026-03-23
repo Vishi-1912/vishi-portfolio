@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     res.send("Chatbot backend running");
 });
 
-initializeRAG();
+// initializeRAG();
 
 // app.get("/chat", async (req, res) => {
 //     const message = req.query.message;
@@ -163,6 +163,19 @@ app.get("/chat", async (req, res) => {
     });
 });
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
-});
+const startServer = async () => {
+  try {
+    await initializeRAG(); // 🔥 MUST WAIT
+
+    const PORT = process.env.PORT || 5000;
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+
+  } catch (err) {
+    console.error("Failed to start server:", err);
+  }
+};
+
+startServer();

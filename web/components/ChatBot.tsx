@@ -41,7 +41,7 @@ export default function ChatBot() {
     setMessages(prev => [...prev, { role: 'bot', content: '' }]);
 
     try {
-      const response = await fetch(`http://localhost:5000/chat?message=${encodeURIComponent(userMessage)}`);
+      const response = await fetch(`https://vishi-portfolio.onrender.com/chat?message=${encodeURIComponent(userMessage)}`);
       
       if (!response.body) throw new Error('No response body');
       
