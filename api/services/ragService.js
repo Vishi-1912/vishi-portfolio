@@ -2,68 +2,50 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
-import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
-import { MemoryVectorStore } from "@langchain/classic/vectorstores/memory";
-import { OllamaEmbeddings } from "@langchain/ollama";
-
 // Fix for ES modules (__dirname)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-let vectorStore;
+let documents = [];
 
-// 🧠 STEP 1: Load and prepare data
-async function loadData() {
-  const filePath = path.join(__dirname, "../data/profile.json");
-  const rawData = fs.readFileSync(filePath, "utf-8");
-  const jsonData = JSON.parse(rawData);
-
-  // Convert JSON → plain text chunks
-  const documents = jsonData.map(item => ({
-    pageContent: `${item.title}: ${item.content}`,
-    metadata: { source: item.title }
-  }));
-
-  return documents;
-}
-
-// ✂️ STEP 2: Split text into chunks
-async function splitDocuments(documents) {
-  const splitter = new RecursiveCharacterTextSplitter({
-    chunkSize: 300,
-    chunkOverlap: 50
-  });
-
-  return await splitter.splitDocuments(documents);
-}
-
-// 🧬 STEP 3: Create embeddings + vector store
+// 🧠 STEP 1: Load data
 export async function initializeRAG() {
-  const docs = await loadData();
-  const splitDocs = await splitDocuments(docs);
+  try {
+    const filePath = path.join(__dirname, "../data/profile.json");
 
-  const embeddings = new OllamaEmbeddings({
-    model: "mistral" // uses local Ollama
-  });
+    console.log("Loading data from:", filePath);
 
-  vectorStore = await MemoryVectorStore.fromDocuments(
-    splitDocs,
-    embeddings
-  );
+    const rawData = fs.readFileSync(filePath, "utf-8");
+    const jsonData = JSON.parse(rawData);
 
-  console.log("✅ RAG initialized");
+    documents = jsonData.map(item => ({
+      pageContent: `${item.title}: ${item.content}`,
+      metadata: { source: item.title }
+    }));
+
+    console.log("✅ RAG initialized with", documents.length, "documents");
+
+  } catch (err) {
+    console.error("❌ RAG initialization failed:", err);
+  }
 }
 
-// 🔍 STEP 4: Retrieve relevant context
+// 🔍 Simple similarity function
+function simpleSimilarity(query, text) {
+  const qWords = query.toLowerCase().split(/\s+/);
+  const tWords = text.toLowerCase().split(/\s+/);
+
+  let score = 0;
+  qWords.forEach(word => {
+    if (tWords.includes(word)) score++;
+  });
+
+  return score;
+}
+
+// 🔍 STEP 2: Retrieve context
 export async function getRelevantContext(query) {
-  if (!vectorStore) {
-    throw new Error("RAG not initialized");
-  }
-
-  const results = await vectorStore.similaritySearch(query, 4);
-
-  // 🔥 Add relevance check (basic version)
-  if (!results || results.length === 0) {
+  if (!documents || documents.length === 0) {
     return {
       context: "",
       sources: [],
@@ -71,12 +53,19 @@ export async function getRelevantContext(query) {
     };
   }
 
-  const context = results.map(r => r.pageContent).join("\n");
-  const sources = results.map(r => r.metadata.source);
+  const scored = documents.map(doc => ({
+    ...doc,
+    score: simpleSimilarity(query, doc.pageContent)
+  }));
 
-  return {
-    context,
-    sources,
-    isRelevant: true
-  };
+  const topResults = scored
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+
+  const context = topResults.map(d => d.pageContent).join("\n");
+  const sources = topResults.map(d => d.metadata.source);
+
+  const isRelevant = topResults[0]?.score > 0;
+
+  return { context, sources, isRelevant };
 }
